@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'onboarding_page.dart';
 
@@ -16,19 +18,25 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   final List<Widget> _pages = [
     OnboardingPage(
-      title: 'Welcome to the App',
-      description: 'This is the first onboarding page.',
+      title: 'Welcome to the MoviTV',
+      description: 'Discover the Movie and TV around the world',
       image: Image.asset('asset/movies.png'),
+      currentPage: 0,
+      pageCount: 3,
     ),
     OnboardingPage(
       title: 'Explore the Features',
-      description: 'This is the second onboarding page.',
+      description: 'You can find your favorite Movie and TV in our app',
       image: Image.asset('asset/television.png'),
+      currentPage: 1,
+      pageCount: 3,
     ),
     OnboardingPage(
       title: 'Get Started',
-      description: 'This is the final onboarding page.',
+      description: "Let's Go",
       image: Image.asset('asset/movies.png'),
+      currentPage: 2,
+      pageCount: 3,
     ),
   ];
 
@@ -66,6 +74,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       },
                       child: const Text('Previous'),
                     ),
+                  Spacer(), // Added Spacer widget
                   if (_currentPage != _pages.length - 1)
                     ElevatedButton(
                       onPressed: () {
