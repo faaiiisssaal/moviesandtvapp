@@ -190,6 +190,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.1"
+  flutter_onboarding:
+    dependency: "direct main"
+    description:
+      name: flutter_onboarding
+      sha256: "6d15474f57f78c4ea71a6f48ae9f9775461365f6c054827e580f2c398e709649"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.9"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -408,6 +416,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.2"
+  onboarding:
+    dependency: "direct main"
+    description:
+      name: onboarding
+      sha256: "97092ff5852a717549fd5585491b6d5e324ac921722aa010d5a9b0b1a892675d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.0"
   path:
     dependency: transitive
     description:

@@ -52,6 +52,9 @@ dependencies:
   url_launcher:
   youtube_player_flutter: ^8.0.0
   google_fonts: ^4.0.4
+  onboarding: ^3.1.0
+  flutter_onboarding: ^0.0.9
+
 
 dev_dependencies:
   flutter_test:
