@@ -1,18 +1,19 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'home/homepage.dart';
+import 'content/movielistscreen.dart';
 import 'onboarding/onboarding_screen.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-// Future<void> main() async {
-//   await DotEnv().load(fileName: '.env');
+// void main() {
 //   runApp(const MyApp());
 // }
+
+Future<void> main() async {
+  await DotEnv().load(fileName: '.env');
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -70,7 +71,7 @@ class _AppWrapperState extends State<AppWrapper> {
         onDone: completeOnboarding,
       );
     } else {
-      return const HomePage();
+      return MovieListScreen();
     }
   }
 }
