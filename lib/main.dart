@@ -9,11 +9,6 @@ void main() {
   runApp(const MyApp());
 }
 
-// Future<void> main() async {
-//   await DotEnv().load(fileName: '.env');
-//   runApp(const MyApp());
-// }
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
