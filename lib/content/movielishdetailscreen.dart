@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class MovieDetailsScreen extends StatelessWidget {
   final dynamic movie;
 
-  MovieDetailsScreen({required this.movie});
+  const MovieDetailsScreen({super.key, required this.movie});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class MovieDetailsScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
+          SizedBox(
             width: double.infinity,
             height: 300,
             child: ClipRRect(
@@ -30,15 +30,15 @@ class MovieDetailsScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 16),
-                Text(
+                const SizedBox(height: 16),
+                const Text(
                   'Overview',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
                   movie['overview'],
-                  style: TextStyle(fontSize: 16),
+                  style: const TextStyle(fontSize: 16),
                 ),
               ],
             ),

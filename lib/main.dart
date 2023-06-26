@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'home/homepage.dart';
+import 'content/movielistscreen.dart';
 import 'onboarding/onboarding_screen.dart';
 
 void main() {
@@ -65,7 +65,7 @@ class _AppWrapperState extends State<AppWrapper> {
         onDone: completeOnboarding,
       );
     } else {
-      return const HomePage();
+      return const MovieListScreen();
     }
   }
 }

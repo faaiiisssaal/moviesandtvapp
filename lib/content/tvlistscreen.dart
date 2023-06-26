@@ -8,16 +8,16 @@ import 'dart:convert';
 
 import 'movielishdetailscreen.dart';
 
-class MovieListScreen extends StatefulWidget {
-  const MovieListScreen({super.key});
+class TVListScreen extends StatefulWidget {
+  const TVListScreen({super.key});
 
   @override
-  _MovieListScreenState createState() => _MovieListScreenState();
+  _TVListScreenState createState() => _TVListScreenState();
 }
 
-class _MovieListScreenState extends State<MovieListScreen> {
-  List<dynamic> movies = [];
-  List<dynamic> filteredMovies = [];
+class _TVListScreenState extends State<TVListScreen> {
+  List<dynamic> tv = [];
+  List<dynamic> filteredtv = [];
   bool isSearching = false;
   TextEditingController searchController = TextEditingController();
 
@@ -36,8 +36,8 @@ class _MovieListScreenState extends State<MovieListScreen> {
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
       setState(() {
-        movies = data['results'];
-        filteredMovies = List.from(movies);
+        tv = data['results'];
+        filteredtv = List.from(tv);
       });
     } else {
       if (kDebugMode) {
@@ -46,18 +46,18 @@ class _MovieListScreenState extends State<MovieListScreen> {
     }
   }
 
-  void searchMovies(String searchText) {
+  void searchtv(String searchText) {
     setState(() {
-      filteredMovies = movies.where((movie) {
+      filteredtv = tv.where((movie) {
         final title = movie['title'].toString().toLowerCase();
         return title.contains(searchText.toLowerCase());
       }).toList();
     });
   }
 
-  // void searchMovies(String searchText) {
+  // void searchtv(String searchText) {
   //   setState(() {
-  //     filteredMovies = movies.where((movie) {
+  //     filteredtv = tv.where((movie) {
   //       final title = movie['title'].toString().toLowerCase();
   //       final description = movie['overview'].toString().toLowerCase();
   //       return title.contains(searchText.toLowerCase()) ||
@@ -75,7 +75,7 @@ class _MovieListScreenState extends State<MovieListScreen> {
   void cancelSearch() {
     setState(() {
       isSearching = false;
-      filteredMovies = List.from(movies);
+      filteredtv = List.from(tv);
       searchController.clear();
     });
   }
@@ -83,14 +83,14 @@ class _MovieListScreenState extends State<MovieListScreen> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: filteredMovies.isEmpty
+      child: filteredtv.isEmpty
           ? const Center(
-              child: Text('No movies found.'),
+              child: Text('No tv found.'),
             )
           : CarouselSlider.builder(
-              itemCount: filteredMovies.length,
+              itemCount: filteredtv.length,
               itemBuilder: (context, index, realIndex) {
-                final movie = filteredMovies[index];
+                final movie = filteredtv[index];
                 return GestureDetector(
                   onTap: () {
                     Navigator.push(
